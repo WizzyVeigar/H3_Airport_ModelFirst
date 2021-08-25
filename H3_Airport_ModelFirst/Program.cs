@@ -1,4 +1,5 @@
-﻿using System;
+﻿using H3_Airport_ModelFirst.Models;
+using System;
 
 namespace H3_Airport_ModelFirst
 {
@@ -6,7 +7,12 @@ namespace H3_Airport_ModelFirst
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            AirportManager manager = new AirportManager();
+
+            foreach (Route item in manager.GetRoutes())
+            {
+                Console.WriteLine(item.ToAirport.Name +"    " + item.FromAirport.Name);
+            } 
         }
     }
 }
